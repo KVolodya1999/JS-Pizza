@@ -47,6 +47,7 @@ function getIngredientsArray(pizza) {
             <% } %>
 
             <%if(pizza.hasOwnProperty("big_size")){%>
+            <div class="col-sm-<%if(!pizza.hasOwnProperty("small_size")){%>12<% }else {%>6<%}%> bigPizz">
                 <div class="description1">
                     <img class="sizeIcon" src="assets/images/size-icon.svg">
                     <span class="size"><%= pizza.big_size.size%></span>
