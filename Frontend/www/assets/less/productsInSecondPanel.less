@@ -1,0 +1,62 @@
+
+.allOrders{
+  text-overflow-y: scroll;
+}
+
+.orderPizza{
+  position:relative;
+  height: 115px;
+  width:100%;
+  padding: 20px 60px 10px 25px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  overflow: hidden;
+
+  .pizzaHalfIcon{
+    position: absolute;
+    top: 12px;
+    right: -48px;
+    max-height: 95px;
+    max-width: 95px;
+    border-radius: 50% 0 0 50%;
+  }
+
+  .titleOfOrderPizza{
+    line-height: 16px;
+    font-size: 20px;
+    color: #ec890e;
+  }
+
+  .orderInfo{
+    margin-bottom: 5px;
+
+    .sizeOrder{
+      margin-right: 10px;
+    }
+  }
+
+  .price{
+    margin-right: 10px;
+  }
+
+  .btn-circle{
+    border-radius: 4cm;
+    padding: 5px 6px 3px 6px;
+    width:30px;
+    height:30px;
+  }
+
+  .plus{
+    padding-left: 8px;
+    margin-right:20px;
+  }
+
+  .clearButton{
+    padding-top: 6px;
+    color: @mainColor;
+  }
+
+  .amountOfPizzaInOrder{
+    margin:0 5px 0 5px;
+  }
+
+}

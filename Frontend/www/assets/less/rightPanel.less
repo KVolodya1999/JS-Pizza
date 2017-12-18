@@ -20,6 +20,7 @@
     padding-top: 30px;
     font-size: 0.5cm;
     background-color: white;
+    z-index: 4;
 
     .topLabel1 {
       font-weight: 600;
@@ -45,6 +46,12 @@
 
   .allOrders{
     padding-top: @height-top-panel - 20px;
+    position:absolute;
+    top:20px;
+    width:100%;
+    bottom:0px;
+    overflow-y:scroll;
+    margin-bottom: @height-top-panel+40px;
   }
 
 

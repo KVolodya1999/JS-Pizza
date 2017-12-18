@@ -8,6 +8,15 @@ var Pizza_List = require('../Pizza_List');
 //HTML едемент куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
 
+var pizzaFilters = {
+        all: 'all',
+        vega: 'vega',
+        meat: 'meat',
+        ocean: 'ocean',
+        pineapple: 'pineapple',
+        mushroom: 'mushroom'
+}
+
 function showPizzaList(list) {
     //Очищаємо старі піци в кошику
     $pizza_list.html("");
@@ -35,12 +44,23 @@ function filterPizza(filter) {
     //Масив куди потраплять піци які треба показати
     var pizza_shown = [];
 
-    Pizza_List.forEach(function(pizza){
-        //Якщо піка відповідає фільтру
-        //pizza_shown.push(pizza);
+        if(filter==pizzaFilters.all) Pizza_List.forEach(function(t){
+            pizza_shown.push(t);
+        });
 
-        //TODO: зробити фільтри
-    });
+        else {
+            if (filter != pizzaFilters.vega) {
+                Pizza_List.forEach(function (t) {
+                    if (t.content.hasOwnProperty(filter)) pizza_shown.push(t);
+
+                });
+            }
+            else Pizza_List.forEach(function (t) {
+                if (t.type=='Вега піца') pizza_shown.push(t);
+            });
+        }
+
+
 
     //Показати відфільтровані піци
     showPizzaList(pizza_shown);
@@ -48,7 +68,19 @@ function filterPizza(filter) {
 
 function initialiseMenu() {
     //Показуємо усі піци
-    showPizzaList(Pizza_List)
+    showPizzaList(Pizza_List);
+
+    var filtrs = $(".filter");
+
+    $(".filter").each(function (i,val) {
+
+        $(val).click(function () {
+            for(var j=0;j<$(".filter").length;j++) if(j!=i) $($(".filter")[j]).removeClass("activeFilter");
+            $(val).addClass("activeFilter");
+            var fil = $(val).attr("id");
+            filterPizza(fil);
+        });
+    });
 }
 
 exports.filterPizza = filterPizza;
