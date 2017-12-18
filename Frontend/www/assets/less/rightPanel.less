@@ -1,0 +1,73 @@
+
+.right-panel{
+  position: fixed;
+  top:0;
+  right:0;
+  width:@width-right-panel;
+  height:100%;
+  padding-top: 20px;
+  box-shadow: #d0d0d0 -3px -2px 4px;
+  z-index:4;
+
+  background-color: #eaeaea;
+
+  .secondColumnTop{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:@height-top-panel;
+    padding: 15px;
+    padding-top: 30px;
+    font-size: 0.5cm;
+    background-color: white;
+
+    .topLabel1 {
+      font-weight: 600;
+
+      .amountOfOrders {
+        font-size: 0.4cm;
+        color:white;
+        background-color: @mainColor;
+        padding:2px 5px 2px 5px;
+        border-radius: 3cm;
+      }
+
+    }
+
+    .clearLabel{
+      margin-top: 5px;
+      font-size: 0.3cm;
+      float: right;
+      cursor: pointer;
+    }
+
+  }
+
+  .allOrders{
+    padding-top: @height-top-panel - 20px;
+  }
+
+
+  .secondColumnBottom{
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:@height-top-panel+40px;
+    padding: 15px;
+    font-size: 0.5cm;
+    background-color: white;
+
+    .sumLabel{
+      padding: 10px;
+      padding-left: 0;
+      font-size: 0.5cm;
+      .sum{
+        float:right;
+      }
+    }
+
+    .ordeButtonDiv{
+      padding:10px;
+    }
+  }
+}
